@@ -1,0 +1,24 @@
+ found marvellous this simple Javascript LZW function, from the magicians at 140 bytes of javascript :
+
+function (
+    a // String to compress and placeholder for 'wc'.
+){
+
+    for (
+        var b = a + "A", // Append first "illegal" character (charCode === 256).
+            c = [], // dictionary
+            d = 0, // dictionary size
+            e = d, // iterator
+            f = c, // w
+            g = c, // result
+            h; // c
+
+        h = b.charAt(e++);
+    )
+
+        c[h] = h.charCodeAt(), // Fill in the dictionary ...
+        f = 1 + c[a = f + h] ? a : (g[d++] = c[f], c[a] = d + 255, h); // ... and use it to compress data.
+
+    return g // Array of compressed data.
+
+}
